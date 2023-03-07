@@ -12,5 +12,5 @@ function handleTodoClick() {
         {todo.name }
         </label>
     </div>
-  )
+  )  
 }
