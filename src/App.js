@@ -11,7 +11,11 @@ function App() {
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(localStorageKey));
-    if (storedTodos) setTodos(storedTodos)
+    // with <React.StrictMode> disabled in index.js
+    // if (storedTodos) setTodos(storedTodos)
+    
+ // with <React.StrictMode> enabled in index.js
+ setTodos( prevTodos => [...prevTodos, ...storedTodos] );
   }, []);
 
   useEffect(() => {
