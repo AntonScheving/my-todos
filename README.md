@@ -1,4 +1,28 @@
-# Getting Started with Create React App
+# MY Todo List React App
+
+<React.StrictMode>
+lines 12- 18 in APP.js
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem(localStorageKey));
+    // with <React.StrictMode> disabled in index.js
+    // if (storedTodos) setTodos(storedTodos)
+    
+ // with <React.StrictMode> enabled in index.js
+ setTodos( prevTodos => [...prevTodos, ...storedTodos] );
+  }, []);
+
+
+make sure to import uuid like this:
+line 5 in APP.js
+import { v4 as uuidv4 } from "uuid";
+
+
+
+this is the instruction to deploy the site on Github
+https://github.com/gitname/react-gh-pages
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
