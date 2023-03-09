@@ -1,94 +1,150 @@
-# MY Todo List React App
+# My Todos
 
-<React.StrictMode>
-lines 12- 18 in APP.js
-  useEffect(() => {
-    const storedTodos = JSON.parse(localStorage.getItem(localStorageKey));
-    // with <React.StrictMode> disabled in index.js
-    // if (storedTodos) setTodos(storedTodos)
-    
- // with <React.StrictMode> enabled in index.js
- setTodos( prevTodos => [...prevTodos, ...storedTodos] );
-  }, []);
-
-
-make sure to import uuid like this:
-line 5 in APP.js
-import { v4 as uuidv4 } from "uuid";
+  [![License](https://img.shields.io/static/v1?label=License&message=MIT&color=blue&?style=plastic&logo=appveyor)](https://opensource.org/license/MIT)
 
 
 
-this is the instruction to deploy the site on Github
-https://github.com/gitname/react-gh-pages
+## Table Of Content
+
+- [Description](#description)
+- [Deployed website link](#deployedWebsite)
+- [Installation](#installation)
+- [Usage](#usage)
+
+- [Tests](#tests)
+- [GitHub](#github)
+
+- [License](#license)
 
 
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GitHub repo size](https://img.shields.io/github/repo-size/AntonScheving/my-todos?style=plastic)
 
-## Available Scripts
+  ![GitHub top language](https://img.shields.io/github/languages/top/AntonScheving/my-todos?style=plastic)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  This is a Todo List application written in React. The application allows the user to add new tasks to a list, mark them as completed, and remove completed tasks from the list.
 
-### `npm test`
+The application is built using React components and hooks, which allow for efficient management of state and dynamic rendering of the UI. The App component contains the main logic of the application, including the state management and handling of user events such as adding, completing, and removing tasks.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The TodoList component receives the current list of tasks as props and renders a list of Todo components for each task. Each Todo component displays a checkbox and the name of the task, and can be clicked to toggle its completion status.
 
-### `npm run build`
+The application also utilizes the useRef and useEffect hooks to manage input fields and local storage, respectively. The useRef hook is used to create a reference to the input field where users can add new tasks. The useEffect hook is used to persist the task list in local storage, allowing the user to return to the application and see their previous list of tasks.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Overall, this application provides a simple and intuitive way for users to manage their daily tasks and stay organized.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p>Deployed website: <strong><a href="https://antonscheving.github.io/my-todos/">https://antonscheving.github.io/my-todos/</a></strong>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+<p align="center">
+  <img alt="The todo list screenshot" [Screenshot] src="src/assets/my-todos-screenshot.png"><br>
+My Todos website screenshot
+</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Installation
 
-### Advanced Configuration
+To install and run the Todo List application locally, follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Clone the repository from GitHub:
 
-### Deployment
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+git clone https://github.com/antonscheving/my-todos.git
 
-### `npm run build` fails to minify
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Navigate to the project directory:
+
+```
+
+cd my-todos
+
+```
+
+1. Install the dependencies using npm:
+
+```
+
+npm install uuid
+
+```
+
+1. Run the application:
+
+```
+
+npm start
+
+```
+
+1. Open your web browser and go to **`http://localhost:3000`** to view the application.
+
+Note: This application requires Node.js to be installed on your computer. If you don't have Node.js installed, you can download it from the official website: **[https://nodejs.org/en/download/](https://nodejs.org/en/download/)**
+
+
+
+
+
+My Todos is built with the following tools and libraries: <ul><li>JavaScript</li> <li>Node.js</li> <li>REACT</li> <li>HTML</li> <li>CSS</li></ul>
+
+
+Here are instructions on how to deploy the site on Github https://github.com/gitname/react-gh-pages
+
+
+## Usage
+ 
+To use the code, you can copy and paste it into your own React project. You should be able to see the todo application in your browser. The application allows you to add new tasks, mark tasks as complete, and remove completed tasks.
+
+
+
+
+
+
+
+
+
+## Tests
+ 
+No tests are provided in this code. However, you can write your own tests using a testing library such as Jest.
+
+
+
+
+
+
+## GitHub
+
+<a href="https://github.com/AntonScheving"><strong>AntonScheving</a></strong>
+
+
+
+<p>Visit my website: <strong><a href="www.antonscheving.com">AntonScheving.com</a></strong></p>
+
+
+
+
+
+
+
+
+## License
+
+[![License](https://img.shields.io/static/v1?label=Licence&message=MIT&color=blue)](https://opensource.org/license/MIT)
+
+

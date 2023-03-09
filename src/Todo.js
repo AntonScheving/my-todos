@@ -9,7 +9,7 @@ function handleTodoClick() {
 
   return (
     <div>
-        <label className="txt">
+        <label className="txt-tasks">
             <input type="checkbox" checked={todo.complete} onChange={handleTodoClick} />
         {todo.name }
         </label>
